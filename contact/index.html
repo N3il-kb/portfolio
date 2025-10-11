@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <h1>Contact</h1>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
-<nav>
+<body>
+  <h1>Contact</h1>
+  <nav>
     <a href="../index.html">Home</a>
-    <a href="../contact/index.html">Contact</a>
+    <a href="../contact/index.html" class="current">Contact</a>
     <a href="../projects/index.html">Projects</a>
     <a href="../resume/index.html">Resume</a>
     <a href="https://github.com/N3il-kb" target="_blank">GitHub</a>
@@ -17,21 +19,20 @@
 
 <form action="mailto:nbango@ucsd.edu" method="post" enctype="text/plain">
 
-<label for="name">Email:
-  <input name="name" type="email">
-</label>
+  <label for="name">Email:
+    <input name="name" type="email">
+  </label>
+  
+  <label for="subject">Subject:
+    <input name="subject">
+  </label>
+  
+  <label for="body">Body:
+    <textarea name="body"></textarea>
+  </label>
+  
+  <button>Submit</button>
+  </form>
 
-<label for="subject">Subject:
-  <input name="subject">
-</label>
-
-<label for="body">Body:
-  <textarea name="body"></textarea>
-</label>
-
-<button>Submit</button>
-</form>
-<body>
-    
 </body>
 </html>
