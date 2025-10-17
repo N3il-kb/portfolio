@@ -1,5 +1,6 @@
 html {
   --color-accent: oklch(65% 50% 0);
+  color-scheme:light dark;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
     max-width: 100ch;
     margin-inline: auto;
     padding: 1rem;
-    accent-color: var(--color-accent)
+    accent-color: var(--color-accent);
 }
 
 nav {
@@ -18,7 +19,7 @@ nav {
   margin-bottom: 1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%);;
 }
 
 nav a {
@@ -32,13 +33,13 @@ nav a {
 nav a.current {
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
   padding-bottom: 0.1em;
 }
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h)
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input, textarea, button {
@@ -56,9 +57,15 @@ form {
 
 
 label {
-  display: contents;
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }
 
 button {
@@ -94,9 +101,6 @@ h1, h2, h3, h4, h5, h6 {
 
 body.resume {
   font-family: "Helvetica Neue", Arial, system-ui, sans-serif;
-  background: #fff;
-  color: #222;
-  max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   line-height: 1.45;
@@ -116,16 +120,6 @@ body.resume header div p {
   margin-bottom: 2rem;
 }
 
-body.resume a {
-  color: #0047ab;
-  text-decoration: none;
-}
-
-body.resume a:hover {
-  text-decoration: underline;
-}
-
-
 body.resume section > header h2 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -134,7 +128,6 @@ body.resume section > header h2 {
   border-bottom: 1px solid #000;
   padding-bottom: 0.2rem;
   margin-bottom: 0.75rem;
-  color: #111;
 }
 
 
@@ -155,7 +148,6 @@ body.resume article strong {
 
 body.resume time {
   font-style: italic;
-  color: #444;
   font-size: 0.9rem;
 }
 
@@ -186,3 +178,4 @@ body.resume section:last-of-type ul {
 body.resume section:last-of-type li {
   margin-bottom: 0.4rem;
 }
+
