@@ -25,7 +25,7 @@ document.body.prepend(nav);
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
     ? "/"                  // Local server
-    : "/website/";        // GitHub Pages repo name
+    : "/n3il-kb.github.io/";        // GitHub Pages repo name
 
 
 for (let p of pages) {
