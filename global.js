@@ -82,3 +82,36 @@ select.addEventListener('input', function (event) {
     document.documentElement.style.setProperty('color-scheme', event.target.value);
     localStorage.colorScheme = newScheme;
   });
+
+// Get a reference to the <form> element
+const form = document.querySelector('form');
+
+// Only run the logic if the form exists on the current page
+if (form) {
+    // 1. Add a listener for the 'submit' event
+    form.addEventListener('submit', function (event) {
+        // Prevent the default HTML form submission (which uses the old encoding)
+        event.preventDefault(); 
+        
+        // Get the base URL from the form's action attribute (mailto:nbango@ucsd.edu)
+        let url = form.action + '?'; 
+
+        // Create a FormData object from the form to easily access all fields
+        const data = new FormData(form);
+
+        // 2. Iterate over the submitted fields and build the URL
+        for (let [name, value] of data) {
+            console.log(name, value);
+            const encodedValue = encodeURIComponent(value); 
+            url += `${name}=${encodedValue}&`; 
+        }
+
+        // Remove the trailing '&' character if the URL isn't empty
+        if (url.endsWith('&')) {
+            url = url.slice(0, -1);
+        }
+        
+        // 3. Open the final, correctly encoded URL (which opens the email client)
+        location.href = url;
+    });
+}
