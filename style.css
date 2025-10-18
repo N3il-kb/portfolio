@@ -100,20 +100,51 @@ h1, h2, h3, h4, h5, h6 {
 ================================================= */
 
 body.resume {
-  font-family: "Helvetica Neue", Arial, system-ui, sans-serif;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   line-height: 1.45;
 }
 
+/* Target all links on the resume page */
+
+body.resume a {
+
+  /* Inherit the text color from the parent element (usually black or the body text color) */
+
+  color: inherit;    
+
+  /* Optional: Ensure the underline color is also black if needed (use the current text color) */
+
+  /* text-decoration-color: currentColor; */ 
+
+}
+
+
+
+/* Ensure the hover state doesn't turn the text blue either */
+
+body.resume a:hover {
+
+  /* Keep the text color the same as the default text */
+
+  color: inherit;
+
+  /* Optional: You can change the underline style on hover here if desired */
+
+  /* text-decoration: underline; */
+
+}
+
 body.resume h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 550;
   text-align: center;
   margin-bottom: 0.25rem;
 }
 
 body.resume header div p {
+  font-family: "Times New Roman", Times, Georgia, serif;
   text-align: center;
   font-size: 0.95rem;
   margin-top: 0.25rem;
@@ -121,38 +152,44 @@ body.resume header div p {
 }
 
 body.resume section > header h2 {
+  font-family: "Times New Roman", Times, Georgia, serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 1rem;
-  font-weight: 700;
-  border-bottom: 1px solid #000;
+  font-weight: 70;
+  border-bottom: 1px solid currentColor;
   padding-bottom: 0.2rem;
   margin-bottom: 0.75rem;
 }
 
 
 body.resume article h3 {
+  font-family: "Times New Roman", Times, Georgia, serif;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
 body.resume article p {
+  font-family: "Times New Roman", Times, Georgia, serif;
   margin: 0.1rem 0;
 }
 
 body.resume article strong {
+  font-family: "Times New Roman", Times, Georgia, serif;
   font-weight: 600;
 }
 
 
 body.resume time {
+  font-family: "Times New Roman", Times, Georgia, serif;
   font-style: italic;
   font-size: 0.9rem;
 }
 
 
 body.resume ul {
+  font-family: "Times New Roman", Times, Georgia, serif;
   list-style-type: "• ";
   padding-left: 1.25rem;
   margin-top: 0.3rem;
@@ -160,22 +197,60 @@ body.resume ul {
 }
 
 body.resume ul li {
+  font-family: "Times New Roman", Times, Georgia, serif;
   margin-bottom: 0.25rem;
   text-indent: -0.25rem;
 }
 
 
 body.resume article {
+  font-family: "Times New Roman", Times, Georgia, serif;
   margin-bottom: 1rem;
 }
 
+/* Apply Flexbox to push the two sides apart */
+.details-row {
+  display: flex;
+  justify-content: space-between; /* Pushes content to opposite ends */
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  margin-bottom: 0.1rem; /* Tight spacing like LaTeX */
+}
+
+/* Style for the Left Column (Title/Org/Degree) */
+.details-row .details-left {
+  flex-grow: 1; /* Allows this side to take up most of the space */
+  /* Add any bolding/sizing here if necessary */
+}
+
+/* Style for the Right Column (Location/Date) */
+.details-row .details-right {
+  text-align: right; /* Aligns text to the right side */
+  white-space: nowrap; /* Prevents location/dates from breaking onto new lines */
+  font-size: 0.95rem; /* Make the dates slightly smaller */
+}
+
+/* style.css */
+
+/* Apply Flexbox to the project title container */
+/* .details-left {
+  display: flex;
+  align-items: baseline; /* Vertically aligns the baseline of the text */
+} */
+
+/* Optional: Make the tech stack italic and slightly smaller */
+.project-tech {
+  font-weight: normal; /* Remove boldness */
+  font-size: 0.95em; 
+  white-space: nowrap; /* Prevents long tech lists from wrapping aggressively */
+}
 
 body.resume section:last-of-type ul {
-  list-style: none;
+  list-style: none; /* Intended for the Skills section */
   padding-left: 0;
 }
 
-body.resume section:last-of-type li {
-  margin-bottom: 0.4rem;
+h3 .project-tech {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.95em;
 }
-
