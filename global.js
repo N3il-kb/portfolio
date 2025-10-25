@@ -169,7 +169,7 @@ export async function fetchJSON(url) {
       <div class="project-card">
         <${headingLevel}>${title}</${headingLevel}>
         ${year ? `<p class="project-year">Year: ${year}</p>` : ''}
-        <img src="../${image}" alt="${title}">
+        <img src="${image}" alt="${title}">
         <p>${description}</p>
       </div>
     `;
