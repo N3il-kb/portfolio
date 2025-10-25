@@ -2,7 +2,7 @@
     {
         "title": "Data Gone Dark: Understanding power outages in the U.S.",
         "year": "2025",
-        "image": "/images/US_choropleth_map_power_outages.png",
+        "image": "../images/US_choropleth_map_power_outages.png",
         "description": "A Python-based outage prediction pipeline using pandas and scikit-learn to classify power-outage severity across U.S. states, featuring preprocessing of weather and utility data, feature engineering, a written description with a narrative and a web dashboard for interactive visualization."
     },
     {
