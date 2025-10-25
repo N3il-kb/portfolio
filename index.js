@@ -2,7 +2,7 @@ import { fetchJSON, renderProjects } from './global.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // 1. Fetch all project data
-  const projects = await fetchJSON('/lib/projects.json');
+  const projects = await fetchJSON('lib/projects.json');
 
   // 2. Select the container on the homepage
   const projectsContainer = document.querySelector('.projects');
