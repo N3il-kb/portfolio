@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Data Gone Dark: Understanding power outages in the U.S.",
+        "year": "2025",
+        "image": "/images/US_choropleth_map_power_outages.png",
+        "description": "A Python-based outage prediction pipeline using pandas and scikit-learn to classify power-outage severity across U.S. states, featuring preprocessing of weather and utility data, feature engineering, a written description with a narrative and a web dashboard for interactive visualization."
+    },
+    {
+        "title": "Soluta aut quis asperiores!",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Officiis, ratione nostrum. Officia, blanditiis neque iusto quod similique eveniet odio ipsam beatae at qui nemo porro itaque magni a labore maiores sint temporibus illum et. Est quasi itaque eveniet."
+    },
+    {
+        "title": "Numquam velit eligendi placeat?",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Ipsa recusandae ratione accusamus praesentium vel quos alias, enim iure commodi dicta officiis veniam nihil nobis laudantium iste ducimus, eligendi excepturi voluptates quod facere sit? Reiciendis deleniti culpa quo consequuntur."
+    },
+    {
+        "title": "Aut ipsum inventore placeat?",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptas, fugiat eum soluta ipsa autem aliquam asperiores distinctio esse recusandae accusamus cupiditate tempora totam minus ea ullam nisi ducimus corporis perferendis ad vitae laboriosam quisquam, odit sit. Magni, accusamus?"
+    },
+    {
+        "title": "Rem quis atque sit.",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Obcaecati tempora dicta id maxime aperiam velit molestias voluptatum cumque, illum enim eum impedit nemo! Accusantium illo, in placeat assumenda quos tempora optio corrupti reiciendis nulla neque nisi excepturi expedita?"
+    },
+    {
+        "title": "Velit accusamus numquam eum.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Eos cum accusantium, expedita maxime voluptatibus saepe quasi facere pariatur molestiae. Sit, tempore non! Inventore corporis autem aperiam harum dolore ullam alias aliquid commodi minima? Quo quas odio ipsam sunt!"
+    },
+    {
+        "title": "Nam corrupti quisquam labore.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quam magni accusantium ullam culpa velit incidunt ea consectetur nesciunt quo fuga necessitatibus, numquam, eius doloribus qui expedita adipisci facilis dolorum ipsum cumque? Aspernatur perspiciatis possimus delectus, veniam sapiente odit."
+    },
+    {
+        "title": "Laboriosam deleniti rerum est.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Accusamus aperiam doloremque voluptatibus natus, facilis error ducimus, sunt atque, facere rem eveniet laudantium veritatis debitis illum magnam voluptatem impedit voluptate mollitia quidem molestias possimus praesentium officiis. Nisi, libero dicta."
+    },
+    {
+        "title": "Odio quae suscipit facere.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quasi impedit vitae aliquid tempore neque. Fugiat reiciendis mollitia voluptatem molestiae asperiores architecto pariatur aliquam enim. Voluptatem blanditiis quis possimus quidem? Sapiente, fuga. Et sapiente, ex perferendis earum non ut."
+    },
+    {
+        "title": "Impedit repudiandae unde perferendis?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Numquam, veritatis eveniet! Sit obcaecati nulla quo officia fugit recusandae rerum! Velit sed est optio pariatur modi? Dolor, esse delectus omnis inventore in expedita ab officia nulla veritatis sapiente. Natus!"
+    },
+    {
+        "title": "Voluptatibus temporibus architecto voluptate.",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quasi cupiditate, fugiat sapiente eaque recusandae aperiam earum porro ex quaerat reiciendis alias dolor iure consequatur doloribus. Dolorem provident cum, delectus maiores error placeat quidem, porro eaque, iste nobis quos?"
+    },
+    {
+        "title": "Iusto ducimus magni molestias?",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Facere asperiores dolore perferendis totam doloribus voluptatibus, non aliquid libero ratione nemo, nobis laboriosam. Sequi dolore quos sit pariatur saepe quas, facere, molestias hic, magni provident laudantium laboriosam esse praesentium."
+    }
+]

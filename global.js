@@ -115,3 +115,68 @@ if (form) {
         location.href = url;
     });
 }
+export async function fetchJSON(url) {
+    try {
+      const response = await fetch(url);
+  
+      console.log(response); // Optional: check in DevTools
+      if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+      return data;
+  
+    } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+      return null;
+    }
+  }
+  
+  export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+    if (!containerElement) {
+      console.warn('No valid container element provided.');
+      return;
+    }
+  
+    // Clear any previous content
+    containerElement.innerHTML = '';
+  
+    // Handle empty project list
+    if (!Array.isArray(projects) || projects.length === 0) {
+      containerElement.innerHTML = '<p>No projects found.</p>';
+      return;
+    }
+  
+    // Optional: Update project count if `.projects-title` element exists
+    const titleElement = document.querySelector('.projects-title');
+    if (titleElement) {
+      titleElement.textContent = `${projects.length} Projects`;
+    }
+  
+    // Render each project
+    projects.forEach(project => {
+      const article = document.createElement('article');
+  
+      // Validate project fields and provide fallback
+      const title = project.title || 'Untitled Project';
+      const description = project.description || 'No description provided.';
+      const image = project.image || 'images/placeholder.png'; // fallback placeholder image
+      const year = project.year || ''; 
+  
+      // Build innerHTML with dynamic heading
+      article.innerHTML = `
+      <div class="project-card">
+        <${headingLevel}>${title}</${headingLevel}>
+        ${year ? `<p class="project-year">Year: ${year}</p>` : ''}
+        <img src="${image}" alt="${title}">
+        <p>${description}</p>
+      </div>
+    `;
+    
+    
+  
+      containerElement.appendChild(article);
+    });
+  }
+  
