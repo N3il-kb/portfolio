@@ -27,6 +27,29 @@ const BASE_PATH = (location.hostname === "localhost" || location.hostname === "1
     ? "/"                  // Local server
     : "/portfolio/";        // GitHub Pages repo name
 
+const ASSET_BASE_URL = `${location.origin}${BASE_PATH}`;
+
+function resolveAssetPath(path) {
+  if (!path) {
+    return null;
+  }
+
+  if (/^(?:[a-z+]+:)?\/\//i.test(path) || path.startsWith('data:')) {
+    return path;
+  }
+
+  const sanitized = path
+    .replace(/^(\.\/)+/, '')
+    .replace(/^(\.\.\/)+/, '');
+
+  try {
+    return new URL(sanitized, ASSET_BASE_URL).href;
+  } catch (error) {
+    console.warn('Unable to resolve asset path:', path, error);
+    return sanitized;
+  }
+}
+
 
 for (let p of pages) {
     let url = p.url;
@@ -161,7 +184,8 @@ export async function fetchJSON(url) {
       // Validate project fields and provide fallback
       const title = project.title || 'Untitled Project';
       const description = project.description || 'No description provided.';
-      const image = project.image || 'images/placeholder.png'; // fallback placeholder image
+      const rawImagePath = project.image || 'images/placeholder.png';
+      const image = resolveAssetPath(rawImagePath) || resolveAssetPath('images/placeholder.png');
       const year = project.year || ''; 
   
       // Build innerHTML with dynamic heading
