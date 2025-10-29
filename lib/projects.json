@@ -6,22 +6,22 @@
         "description": "A Python-based outage prediction pipeline using pandas and scikit-learn to classify power-outage severity across U.S. states, featuring preprocessing of weather and utility data, feature engineering, a written description with a narrative and a web dashboard for interactive visualization."
     },
     {
-        "title": "Soluta aut quis asperiores!",
+        "title": "ARIMA sustainable stock portfolio optimizer",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Officiis, ratione nostrum. Officia, blanditiis neque iusto quod similique eveniet odio ipsam beatae at qui nemo porro itaque magni a labore maiores sint temporibus illum et. Est quasi itaque eveniet."
+        "image": "images/stock_index.png",
+        "description": "A Python-based model that forecasts returns using ARIMA and applies mean-variance optimization with ESG-based soft penalties, aligning portfolio performance with sustainability goals."
     },
     {
-        "title": "Numquam velit eligendi placeat?",
+        "title": "NBA Machine Learning Analytics",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ipsa recusandae ratione accusamus praesentium vel quos alias, enim iure commodi dicta officiis veniam nihil nobis laudantium iste ducimus, eligendi excepturi voluptates quod facere sit? Reiciendis deleniti culpa quo consequuntur."
+        "image": "images/NBA_ML_Project.png",
+        "description": "Built predictive models using NBA player and team statistics to analyze performance trends, forecast outcomes, and uncover key factors driving wins. Applied data cleaning, feature engineering, and regression/classification models to generate actionable insights and visualizations."
     },
     {
-        "title": "Aut ipsum inventore placeat?",
+        "title": "Veeva Systems Valuation Project",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptas, fugiat eum soluta ipsa autem aliquam asperiores distinctio esse recusandae accusamus cupiditate tempora totam minus ea ullam nisi ducimus corporis perferendis ad vitae laboriosam quisquam, odit sit. Magni, accusamus?"
+        "image": "images/Veeva_Systems_Valuation.png",
+        "description": "Developed a comprehensive valuation model for Veeva Systems using multiple approaches—including discounted cash flow (DCF), comparable company analysis, and precedent transactions—to estimate enterprise value and assess financial performance relative to industry peers."
     },
     {
         "title": "Rem quis atque sit.",
