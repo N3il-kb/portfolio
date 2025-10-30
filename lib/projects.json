@@ -24,16 +24,16 @@
         "description": "Developed a comprehensive valuation model for Veeva Systems using multiple approaches—including discounted cash flow (DCF), comparable company analysis, and precedent transactions—to estimate enterprise value and assess financial performance relative to industry peers."
     },
     {
-        "title": "Rem quis atque sit.",
+        "title": "EMG Controlled Drone",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Obcaecati tempora dicta id maxime aperiam velit molestias voluptatum cumque, illum enim eum impedit nemo! Accusantium illo, in placeat assumenda quos tempora optio corrupti reiciendis nulla neque nisi excepturi expedita?"
+        "image": "images/drone_project.png",
+        "description": "Developed a custom drone controlled by electromyography (EMG) signals from a wearable wristband. The system interprets muscle activity data to translate hand gestures into real-time flight commands, enabling RC controller-free drone navigation."
     },
     {
-        "title": "Velit accusamus numquam eum.",
-        "year": "2024",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Eos cum accusantium, expedita maxime voluptatibus saepe quasi facere pariatur molestiae. Sit, tempore non! Inventore corporis autem aperiam harum dolore ullam alias aliquid commodi minima? Quo quas odio ipsam sunt!"
+        "title": "GMAT scores vs the usage of AI",
+        "year": "2025",
+        "image": "images/GMAT_Scores.png",
+        "description": "Explores how the rise of generative AI tools like ChatGPT has impacted college students' cognitive performance, focusing on changes in GMAT Analytical Writing and Critical Reasoning scores. Uses GMAC data and AI usage surveys."
     },
     {
         "title": "Nam corrupti quisquam labore.",
@@ -55,7 +55,7 @@
     },
     {
         "title": "Impedit repudiandae unde perferendis?",
-        "year": "2024",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Numquam, veritatis eveniet! Sit obcaecati nulla quo officia fugit recusandae rerum! Velit sed est optio pariatur modi? Dolor, esse delectus omnis inventore in expedita ab officia nulla veritatis sapiente. Natus!"
     },
@@ -67,7 +67,7 @@
     },
     {
         "title": "Iusto ducimus magni molestias?",
-        "year": "2023",
+        "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Facere asperiores dolore perferendis totam doloribus voluptatibus, non aliquid libero ratione nemo, nobis laboriosam. Sequi dolore quos sit pariatur saepe quas, facere, molestias hic, magni provident laudantium laboriosam esse praesentium."
     }
