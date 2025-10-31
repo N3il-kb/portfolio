@@ -304,3 +304,95 @@ h3 .project-tech {
   color: var(--color-gray, #bbb);
   margin: 0;
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+/* Make the legend a clean grid below the chart */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.5em;
+  border: 1px solid var(--gray, #ccc);
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  margin: 1.5em auto;
+  max-width: 600px;
+  background-color: var(--legend-bg, transparent);
+}
+
+/* Each list item in the legend */
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  list-style: none;
+  color: var(--color);
+  font-size: 0.9rem;
+}
+
+/* The color square ("swatch") */
+.legend .swatch {
+  width: 0.9em;
+  height: 0.9em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Optional: make it circular instead of square */
+.legend .swatch.circle {
+  border-radius: 50%;
+}
+
+/* === CONTAINER LAYOUT === */
+.container {
+  display: flex;
+  align-items: center; /* vertically center pie + legend */
+  justify-content: center; /* center the pair as a whole */
+  gap: 2rem; /* space between pie and legend */
+  flex-wrap: wrap; /* stacks on mobile */
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+
+/* === PIE CHART SIZE === */
+svg {
+  flex: 0 0 40%;
+  max-width: 200px;
+}
+
+/* === LEGEND STYLE === */
+.container {
+  display: flex;
+  align-items: center; /* vertically center pie + legend */
+  justify-content: center; /* center the pair as a whole */
+  gap: 2rem; /* space between pie and legend */
+
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+
+/* === LEGEND ITEMS === */
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  list-style: none;
+}
+
+/* === COLOR SQUARES === */
+.legend .swatch {
+  width: 0.9em;
+  height: 0.9em;
+  background-color: var(--color);
+  border-radius: 2px;
+  display: inline-block;
+}
