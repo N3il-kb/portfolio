@@ -396,3 +396,53 @@ svg {
   border-radius: 2px;
   display: inline-block;
 }
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path {
+  cursor: pointer;
+}
+
+.searchBar {
+  display: block;
+  width: 60%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding: 0.6rem 1rem;
+
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 2rem;       /* rounded corners */
+  background-color: var(--bg-color, #1e1e1e);
+  color: var(--text-color, #f8f8f8);
+
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.searchBar::placeholder {
+  color: #888;
+}
+
+.searchBar:focus {
+  border-color: #4285f4;     /* Google blue */
+  box-shadow: 0 0 5px #4285f4;
+  background-color: var(--bg-focus, #2a2a2a);
+}
