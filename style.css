@@ -446,3 +446,235 @@ path {
   box-shadow: 0 0 5px #4285f4;
   background-color: var(--bg-focus, #2a2a2a);
 }
+
+.summary {
+  margin: 3rem auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.summary h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-item .label {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #7a7a7a;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.summary-item .value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Container */
+#chart svg {
+  display: block;
+  margin: 1.25rem 0 2rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Color tokens (fallbacks if you don’t already have these vars) */
+:root {
+  --chart-text: var(--text-color, #222);
+  --chart-muted: var(--muted-text, #6b7280);        /* tick labels */
+  --chart-axis: var(--border-color, #d1d5db);       /* axis strokes */
+  --chart-grid: rgba(0,0,0,0.08);
+}
+body.dark {
+  --chart-text: var(--text-color, #f5f5f5);
+  --chart-muted: #a8b3cf;
+  --chart-axis: rgba(255,255,255,0.22);
+  --chart-grid: rgba(255,255,255,0.12);
+}
+
+/* Title (if you add one) */
+#chart .title {
+  fill: var(--chart-text);
+  font-weight: 700;
+}
+
+/* Axes */
+#chart .x-axis text,
+#chart .y-axis text {
+  fill: var(--chart-muted);
+  font-size: 12px;
+}
+#chart .x-axis path,
+#chart .x-axis line,
+#chart .y-axis path,
+#chart .y-axis line {
+  stroke: var(--chart-axis);
+}
+
+/* Gridlines */
+#chart .x-grid line,
+#chart .y-grid line {
+  stroke: var(--chart-grid);
+  shape-rendering: crispEdges;
+}
+#chart .x-grid path,
+#chart .y-grid path {
+  stroke: none;
+}
+
+/* Fainter gridlines for both themes */
+#chart .gridlines line {
+  stroke: rgba(189, 195, 199, 0.511); very light gray
+  shape-rendering: crispEdges;
+}
+
+body.dark #chart .gridlines line {
+  stroke: rgba(255, 255, 255, 0.12); /* subtle white in dark mode */
+}
+
+/* Tooltip info box (the <dl> with commit details) */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+dl.info dt {
+  color: #888; /* less prominent labels */
+  font-weight: 500;
+}
+
+dl.info dd {
+  margin: 0;
+  color: var(--text-color, #000);
+  font-weight: 600;
+}
+
+/* Tooltip positioning */
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+
+  /* Step 3.2 visual styling */
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+  color: var(--text-color, #000);
+  border: 1px solid rgba(0, 0, 0, 0.1);       /* subtle border */
+  border-radius: 10px;                        /* rounded corners */
+  padding: 0.8em 1.2em;                       /* comfortable spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* subtle elevation */
+  backdrop-filter: blur(6px);                 /* optional frosted-glass look */
+
+  font-size: 0.9rem;
+  line-height: 1.4;
+  z-index: 1000;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;                                 /* hidden by default */
+}
+
+dl.info {
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dots circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.dots circle:hover {
+  transform: scale(1.5);
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: rgb(187, 172, 172);
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  stroke: orange;
+  stroke-width: 2px;
+  fill: #ff6b6b;
+}
+
+/* Language breakdown container */
+#language-breakdown {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4em 1em;
+  max-width: 400px;
+  margin: 1.5em 0 0;
+  padding: 1em 1.5em;
+
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  font-size: 0.95rem;
+
+  line-height: 1.5;
+}
+
+/* Title-like dt entries */
+#language-breakdown dt {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+}
+
+/* Value entries */
+#language-breakdown dd {
+  margin: 0;
+  text-align: right;
+  font-family: monospace;
+}
+
+/* Add soft divider lines between entries */
+#language-breakdown dt:not(:first-of-type),
+#language-breakdown dd:not(:first-of-type) {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.4em;
+}
+
+/* Smooth fade-in for updates */
+#language-breakdown {
+  transition: all 0.3s ease;
+  opacity: 0.95;
+}
+
