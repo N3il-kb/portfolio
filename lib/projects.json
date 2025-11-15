@@ -36,10 +36,10 @@
         "description": "Explores how the rise of generative AI tools like ChatGPT has impacted college students' cognitive performance, focusing on changes in GMAT Analytical Writing and Critical Reasoning scores. Uses GMAC data and AI usage surveys."
     },
     {
-        "title": "Nam corrupti quisquam labore.",
-        "year": "2024",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quam magni accusantium ullam culpa velit incidunt ea consectetur nesciunt quo fuga necessitatibus, numquam, eius doloribus qui expedita adipisci facilis dolorum ipsum cumque? Aspernatur perspiciatis possimus delectus, veniam sapiente odit."
+        "title": "Bike Watching",
+        "year": "2025",
+        "image": "images/bikewatching_png.png",
+        "description": "An interactive map that visualizes Boston’s 2024 BlueBikes activity in real time. Explore bike stations, traffic patterns, and the city’s bike-lane network, and filter trips by time of day to see how movement changes across the city."
     },
     {
         "title": "Laboriosam deleniti rerum est.",
