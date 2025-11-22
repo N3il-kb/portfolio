@@ -233,11 +233,6 @@ body.resume article {
 
 /* style.css */
 
-/* Apply Flexbox to the project title container */
-/* .details-left {
-  display: flex;
-  align-items: baseline; /* Vertically aligns the baseline of the text */
-} */
 
 /* Optional: Make the tech stack italic and slightly smaller */
 .project-tech {
@@ -543,7 +538,7 @@ body.dark {
 
 /* Fainter gridlines for both themes */
 #chart .gridlines line {
-  stroke: rgba(189, 195, 199, 0.511); very light gray
+  stroke: rgba(189, 195, 199, 0.511);
   shape-rendering: crispEdges;
 }
 
@@ -713,7 +708,7 @@ circle.selected {
   border-radius: 50%;
 }
 
-dd {
+#files dd {
   grid-column: 2;
   display: flex;
   flex-wrap: wrap;

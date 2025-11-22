@@ -28,10 +28,10 @@ async function fetchGitHubData(username) {
         <section class="github-stats">
         <h2>My GitHub Stats</h2>
         <dl>
-            <dt>Followers</dt><dd>4</dd>
-            <dt>Following</dt><dd>6</dd>
-            <dt>Public Repos</dt><dd>9</dd>
-            <dt>Public Gists</dt><dd>0</dd>
+          <dt>Followers</dt><dd>${githubData.followers}</dd>
+          <dt>Following</dt><dd>${githubData.following}</dd>
+          <dt>Public Repos</dt><dd>${githubData.public_repos}</dd>
+          <dt>Public Gists</dt><dd>${githubData.public_gists}</dd>
         </dl>
         </section>
       `;
