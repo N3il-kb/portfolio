@@ -1,8 +1,11 @@
 //meta/main.js
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 let commitXScale;
 let commitYScale;
+
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -43,7 +46,7 @@ function processCommits(data) {
       });
 
       return ret;
-    });
+    }).sort((a, b) => a.datetime - b.datetime);
 }
 
 function renderCommitInfo(data, commits) {
@@ -457,11 +460,12 @@ timeSlider.addEventListener('input', onTimeSliderChange);
 
 function updateFileDisplay(commitsToUse) {
   const lines = commitsToUse.flatMap((d) => d.lines);
-  const files = d3
+  let files = d3
     .groups(lines, (d) => d.file)
     .map(([name, lines]) => {
       return { name, lines };
-    });
+    })
+    .sort((a, b) => b.lines.length - a.lines.length);
 
   const filesContainer = d3
     .select('#files')
@@ -484,8 +488,70 @@ function updateFileDisplay(commitsToUse) {
   .selectAll('div')
   .data((d) => d.lines)
   .join('div')
-  .attr('class', 'loc');
+  .attr('class', 'loc')
+  .attr('style', (d) => `--color: ${colors(d.type)}`);
 }
 
 // Initialize file display once on page load
 updateFileDisplay(filteredCommits);
+
+// 1. Create the Scrollytelling HTML
+d3.select('#scatter-story')
+  .selectAll('.step')
+  .data(commits)
+  .join('div')
+  .attr('class', 'step')
+
+  .style('min-height', '100px')
+  .html(
+    (d, i) => `
+    <p>On ${d.datetime.toLocaleString('en', {
+      dateStyle: 'full',
+      timeStyle: 'short',
+    })},
+    I made <a href="${d.url}" target="_blank">${
+      i > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'
+    }</a>.
+    I edited ${d.totalLines} lines across ${
+      d3.rollups(
+        d.lines,
+        (D) => D.length,
+        (d) => d.file,
+      ).length
+    } files.
+    Then I looked over all I had made, and I saw that it was very good.</p>
+  `,
+  );
+
+// 2. Define what happens when you scroll to a new step
+function onStepEnter(response) {
+  // Get the data associated with the step element
+  const commit = response.element.__data__;
+
+  // Filter commits to match the current step's time
+  filteredCommits = commits.filter((d) => d.datetime <= commit.datetime);
+
+  // Update the Chart
+  updateScatterPlot(data, filteredCommits);
+  
+  // Update the File List
+  updateFileDisplay(filteredCommits);
+
+  // Update the Time Display
+  selectedTime.textContent = commit.datetime.toLocaleString(undefined, { 
+    dateStyle: "long", 
+    timeStyle: "short" 
+  });
+}
+
+// 3. Initialize Scrollama
+const scroller = scrollama();
+
+scroller
+  .setup({
+    container: '#scrolly-1',
+    step: '#scrolly-1 .step',
+    offset: 0.5,
+    debug: false,
+  })
+  .onStepEnter(onStepEnter);
